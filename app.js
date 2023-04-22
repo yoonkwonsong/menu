@@ -105,8 +105,6 @@ const getBtns = () => {
 
     btns.forEach((btn) =>
         btn.addEventListener("click", (e) => {
-            console.log(e.target.textContent)
-
             if (e.target.textContent == "all") {
                 loadMenu(menu)
 
