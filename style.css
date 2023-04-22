@@ -1,0 +1,114 @@
+:root {
+    --section-back: rgb(221, 239, 255);
+    --title-color: black;
+    --secondary-color: rgb(250, 181, 96);
+    --paragraph-color: rgb(51, 101, 141);
+    --btn-back: transparent;
+    --text-white: white;
+}
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    outline: 1px solid red;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--section-back);
+}
+
+.top {
+    padding: 80px 0 20px 0;
+}
+
+.top > h1 {
+    font-size: 20px;
+    color: var(--title-color);
+    letter-spacing: 2px;
+}
+
+.top > .line {
+    width: 300px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin: 10px;
+}
+
+.top > .btns {
+    display: flex;
+}
+
+.top > .btns > .btn {
+    color: var(--secondary-color);
+    background-color: var(--btn-back);
+    border: 2px solid var(--secondary-color);
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+}
+
+.top > .btns > .btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-white);
+}
+
+.bot {
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+}
+
+.bot > .card {
+    display: flex;
+}
+
+.bot > .card > .image {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+}
+
+.bot > .card > .text {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bot > .card > .text > .text-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bot > .card > .text > .text-top > .title {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--title-color);
+}
+
+.bot > .card > .text > .text-top > .price {
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.bot > .card > .text > .text-bot {
+    border-top: 1px dotted var(--paragraph-color);
+    padding: 20px 0;
+}
+
+.bot > .card > .text > .text-bot > p {
+    line-height: 30px;
+    color: var(--paragraph-color);
+}
