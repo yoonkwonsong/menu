@@ -119,6 +119,7 @@ section {
     font-size: 20px;
     letter-spacing: 3px;
     color: var(--title-color);
+    text-transform: capitalize;
 }
 
 .bot > .card > .text > .text-top > .price {
