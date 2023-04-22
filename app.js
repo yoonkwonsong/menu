@@ -80,3 +80,80 @@ const menu = [
         desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
 ]
+
+window.addEventListener("DOMContentLoaded", () => {
+    loadMenu(menu)
+    getBtns()
+})
+
+const getBtns = () => {
+    let categories = ["all"]
+
+    menu.forEach((m) => {
+        !categories.includes(m.category) && categories.push(m.category)
+    })
+
+    const categoryBtnElements = categories
+        .map((c) => {
+            return `<button class="btn ${c}">${c}</button>`
+        })
+        .join("")
+
+    document.querySelector(".btns").innerHTML = categoryBtnElements
+
+    const btns = document.querySelectorAll(".btn")
+
+    btns.forEach((btn) =>
+        btn.addEventListener("click", (e) => {
+            console.log(e.target.textContent)
+
+            if (e.target.textContent == "all") {
+                loadMenu(menu)
+
+                return
+            } else {
+                const categoryMenu = menu.filter(
+                    (m) => m.category == e.target.textContent
+                )
+
+                loadMenu(categoryMenu)
+
+                return
+            }
+        })
+    )
+}
+
+const loadMenu = (m) => {
+    const menuElements = m
+        .map((mm) => {
+            return `
+                   <div class="card">
+                          <div class="image">
+                              <img src="${mm.img}" alt="" />
+                          </div>
+                          <div class="text">
+                              <div class="text-top">
+                                  <h3 class="title">${mm.title}</h3>
+                                  <h3 class="price">$${mm.price}</h3>
+                              </div>
+                              <div class="text-bot">
+                                  <p>
+                                      ${mm.desc}
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+            `
+        })
+        .join("")
+
+    document.querySelector(".bot").innerHTML = menuElements
+}
+
+document.querySelector(".btn-dark").addEventListener("click", () => {
+    document.querySelector("html").classList.toggle("dark-mode")
+    document.querySelector("html").classList.contains("dark-mode")
+        ? (document.querySelector(".btn-dark").textContent = "light")
+        : (document.querySelector(".btn-dark").textContent = "dark")
+})

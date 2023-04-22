@@ -19,6 +19,15 @@
     transition: all 0.3s ease-in-out;
 }
 
+.dark-mode {
+    --section-back: rgb(3, 20, 27);
+    --title-color: rgb(204, 204, 204);
+    --secondary-color: rgb(184, 108, 16);
+    --paragraph-color: rgb(158, 178, 194);
+    --btn-back: transparent;
+    --text-white: rgb(3, 20, 27);
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -69,7 +78,7 @@ section {
 }
 
 .bot {
-    padding: 50px;
+    padding: 50px 0 100px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 30px;
@@ -126,4 +135,35 @@ section {
 .bot > .card > .text > .text-bot > p {
     line-height: 30px;
     color: var(--paragraph-color);
+}
+
+.dark {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
+
+.dark > .btn-dark {
+    cursor: pointer;
+    color: var(--title-color);
+    background-color: var(--btn-back);
+    border: 2px solid var(--title-color);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.dark > .btn-dark:hover {
+    background-color: var(--title-color);
+    color: var(--text-white);
+}
+
+@media screen and (max-width: 1300px) {
+    .bot {
+        grid-template-columns: 1fr;
+        gap: 40px 0;
+    }
 }
