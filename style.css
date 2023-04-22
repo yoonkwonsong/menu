@@ -1,6 +1,6 @@
 :root {
-    --section-back: rgb(221, 239, 255);
-    --title-color: black;
+    --section-back: rgb(255, 252, 236);
+    --title-color: rgb(10, 50, 66);
     --secondary-color: rgb(250, 181, 96);
     --paragraph-color: rgb(51, 101, 141);
     --btn-back: transparent;
@@ -14,36 +14,41 @@
     margin: 0;
     box-sizing: border-box;
 
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+
+    transition: all 0.3s ease-in-out;
 }
 
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     background-color: var(--section-back);
+    min-height: 100vh;
 }
 
 .top {
-    padding: 80px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px 0 20px 0;
 }
 
 .top > h1 {
-    font-size: 20px;
+    font-size: 35px;
     color: var(--title-color);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .top > .line {
-    width: 300px;
+    width: 100px;
     height: 2px;
     background-color: var(--secondary-color);
-    margin: 10px;
+    margin: 20px;
 }
 
 .top > .btns {
+    margin: 10px;
     display: flex;
 }
 
@@ -54,6 +59,8 @@ section {
     cursor: pointer;
     width: 100px;
     height: 30px;
+    margin: 0 5px;
+    text-transform: capitalize;
 }
 
 .top > .btns > .btn:hover {
@@ -62,7 +69,7 @@ section {
 }
 
 .bot {
-    padding: 50px 0;
+    padding: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 30px;
@@ -73,15 +80,22 @@ section {
 }
 
 .bot > .card > .image {
-    width: 500px;
-    height: 300px;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+}
+
+.bot > .card > .image > img {
+    border: 4px solid var(--secondary-color);
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 3px solid var(--secondary-color);
 }
 
 .bot > .card > .text {
-    width: 900px;
+    margin-left: 25px;
+    width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -89,11 +103,12 @@ section {
 .bot > .card > .text > .text-top {
     display: flex;
     justify-content: space-between;
+    padding: 0 0 10px 0;
 }
 
 .bot > .card > .text > .text-top > .title {
     font-size: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: var(--title-color);
 }
 
@@ -105,7 +120,7 @@ section {
 
 .bot > .card > .text > .text-bot {
     border-top: 1px dotted var(--paragraph-color);
-    padding: 20px 0;
+    padding: 20px 30px 0 0;
 }
 
 .bot > .card > .text > .text-bot > p {
